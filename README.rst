@@ -27,7 +27,8 @@ Register **emencia.django.countries** in your INSTALLED_APPS section your projec
 
   >>> INSTALLED_APPS = (
   ...   # Your favorites apps
-  ...   'emencia.django.countries',)
+  ...   'emencia.django.countries',
+  ... )
 
 Now you can run a *syncdb* for installing the models into your database and the list of all country contained in a fixture.
 
@@ -36,20 +37,21 @@ Usage
 =====
 
 By default when the fixture is loaded all the countries a leveled to 0, 
-the default and displayed by alphabetical order.
+the default and displayed by alphabetical order. ::
+
+  >>> from emencia.django.countries.models import Country
+  >>> Country.objects.all()
+  ... [<Country: Afghanistan>, <Country: Albania>, <Country: Algeria>, '...(remaining elements truncated)...']
 
 So if you don't want to display *Afghanistan* as the first country of your list, 
 you have a set a high value to the **level** attribute for all the countries you want.
 
 Now if you want to retrieve your country list ordered do this : ::
 
-  >>> from emencia.django.countries.models import Country
-  >>> Country.objects.all()
-  ... [<Country: Afghanistan>, <Country: Albania>, <Country: Algeria>, '...(remaining elements truncated)...']
-
   >>> france = Country.objects.get(iso='FR')
   >>> france.level = 100
   >>> france.save()
+
   >>> Country.objects.all()
   ... [<Country: France>, <Country: Afghanistan>, <Country: Albania>, '...(remaining elements truncated)...']
 
