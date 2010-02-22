@@ -1,4 +1,4 @@
-"""Managers for emencia.django.directory"""
+"""Managers for emencia.django.countries"""
 from django.db import models
 
 class CountryManager(models.Manager):

@@ -1,4 +1,4 @@
-"""Unit tests for emencia.django.directory"""
+"""Unit tests for emencia.django.countries"""
 from django.test import TestCase
 
 from emencia.django.countries.models import Country

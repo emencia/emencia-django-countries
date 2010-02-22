@@ -5,9 +5,9 @@ version = '0.1'
 
 setup(name='emencia.django.countries',
       version=version,
-      description="List of manageable countries for your Django projects",
-      long_description=open("README.rst").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      description='List of manageable countries for your Django projects',
+      long_description=open('README.rst').read() + '\n' +
+                       open(os.path.join('docs', 'HISTORY.txt')).read(),
       keywords='django, countries',
       classifiers=[
           'Intended Audience :: Developers',
@@ -20,7 +20,7 @@ setup(name='emencia.django.countries',
       author='Fantomas42',
       author_email='fantomas42@gmail.com',
       url='http://emencia.fr',
-      
+
       license='BSD License',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['emencia', 'emencia.django'],

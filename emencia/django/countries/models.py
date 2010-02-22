@@ -1,4 +1,4 @@
-"""Models for emencia.django.directory"""
+"""Models for emencia.django.countries"""
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
