@@ -20,6 +20,6 @@ class Country(models.Model):
 
     class Meta:
         db_table = 'country'
-        verbose_name = _('Country')
-        verbose_name_plural = _('Countries')
+        verbose_name = _('country')
+        verbose_name_plural = _('countries')
         ordering = ('-level', 'printable_name')
