@@ -41,7 +41,7 @@ the default and displayed by alphabetical order. ::
 
   >>> from emencia.django.countries.models import Country
   >>> Country.objects.all()
-  ... [<Country: Afghanistan>, <Country: Albania>, <Country: Algeria>, '...(remaining elements truncated)...']
+  [<Country: Afghanistan>, <Country: Albania>, <Country: Algeria>, '...(remaining elements truncated)...']
 
 So if you don't want to display *Afghanistan* as the first country of your list, 
 you have a set a high value to the **level** attribute for all the countries you want.
@@ -53,13 +53,28 @@ Now if you want to retrieve your country list ordered do this : ::
   >>> france.save()
 
   >>> Country.objects.all()
-  ... [<Country: France>, <Country: Afghanistan>, <Country: Albania>, '...(remaining elements truncated)...']
+  [<Country: France>, <Country: Afghanistan>, <Country: Albania>, '...(remaining elements truncated)...']
 
 But if you only want a short list of countries with the level attribute set, you can do this : ::
 
   >>> Country.objects.leveled()
-  ... [<Country: France>]
+  [<Country: France>]
 
 This will return only the countries with a level value different than 0.
 
+Template Context Processors
+===========================
+
+Sometimes it can be usefull to have all the countries in the context for rendering templates,
+so a template context processor is provided. ::
+
+  >>> TEMPLATE_CONTEXT_PROCESSORS = (
+  ...      # Your template context processors
+  ...      'emencia.django.countries.context_processors.countries',
+  ...	)
+
+This template context processor, provides 2 variables in the context :
+
+  * COUNTRIES_LIST
+  * COUNTRIES_LIST_LEVELED
 
