@@ -78,3 +78,26 @@ This template context processor, provides 2 variables in the context :
   * COUNTRIES_LIST
   * COUNTRIES_LIST_LEVELED
 
+Template tags
+=============
+
+But in general it's a waste of ressources to have all the countries loaded in the context,
+because it make a database request for each request, so template tags have been implemented.
+
+In your templates, to get the countries list, simply do this. ::
+
+  {% load countries_tags %}
+
+  {% get_countries %}
+
+It will load the countries list in the local context of the template, in a variable named **COUNTRIES**
+But if you want to change the name of this variable use this syntax. ::
+
+  {% get_countries as MY_COUNTRIES %}
+
+If you only want to have the short list of countries, use this tag. ::
+
+  {% get_countries_leveled as MY_COUNTRIES %}
+
+Of course the same syntax apply to this tag.
+
