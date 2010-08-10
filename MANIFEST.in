@@ -1,0 +1,5 @@
+include README.rst
+recursive-include docs *
+recursive-include emencia/django/countries/fixtures *.json
+recursive-include emencia/django/countries/locale *
+recursive-include emencia/django/countries/templates *.txt *.html
