@@ -4,7 +4,10 @@ from django.utils.translation import ugettext_lazy as _
 
 from emencia.django.countries.managers import CountryManager
 
+from transmeta import TransMeta
+
 class Country(models.Model):
+    __metaclass__ = TransMeta
     """Country model based on django-countries"""
     iso = models.CharField(_('ISO alpha-2'), max_length=2, primary_key=True)
     name = models.CharField(_('Official name (CAPS)'), max_length=128)
@@ -19,7 +22,8 @@ class Country(models.Model):
         return self.printable_name
 
     class Meta:
+        translate = ('printable_name',)
         db_table = 'country'
         verbose_name = _('country')
         verbose_name_plural = _('countries')
-        ordering = ('-level', 'printable_name')
+        ordering = ('-level',)
