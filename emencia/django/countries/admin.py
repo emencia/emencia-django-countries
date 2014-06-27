@@ -5,7 +5,7 @@ from django.conf import settings
 
 from emencia.django.countries.models import Country
 
-fields = ['printable_name_%s' % lang for lang in settings.LANGUAGES ]
+fields = ['printable_name_%s' % lang[0] for lang in settings.LANGUAGES ]
 
 class CountryAdmin(admin.ModelAdmin):
     search_fields = fields + ['name', 'iso', 'iso3']
