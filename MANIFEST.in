@@ -1,4 +1,6 @@
 include README.rst
+include HISTORY.rst
+include LICENSE.txt
 recursive-include docs *
 recursive-include emencia/django/countries/fixtures *
 recursive-include emencia/django/countries/locale *
