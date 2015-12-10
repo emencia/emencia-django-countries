@@ -6,7 +6,11 @@ class CountryManager(models.Manager):
     
     def leveled(self):
         """Return all countries with a level set"""
-        return self.get_query_set().exclude(level=0)
+        
+        # Compatibility support for Django<1.6
+        safe_get_queryset = (self.get_query_set if hasattr(self, 'get_query_set') else self.get_queryset)
+        
+        return safe_get_queryset.exclude(level=0)
     
 
                         
