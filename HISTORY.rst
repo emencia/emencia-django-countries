@@ -1,6 +1,11 @@
 Changelog
 =========
 
+Version 0.2.1 - 2015/12/10
+--------------------------
+
+* Fixed bad path for ``HISTORY.rst`` in ``setup.py``;
+
 Version 0.2.0 - 2015/12/10
 --------------------------
 

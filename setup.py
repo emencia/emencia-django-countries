@@ -1,14 +1,14 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.2.0'
+version = '0.2.1'
 
 setup(
     name='emencia.django.countries',
     version=version,
     description='List of manageable countries for your Django projects',
     long_description=open('README.rst').read() + '\n' +
-                    open('HISTORY.txt').read(),
+                    open('HISTORY.rst').read(),
     keywords='django, countries',
     classifiers=[
         'Programming Language :: Python',
