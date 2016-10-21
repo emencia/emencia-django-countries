@@ -1,16 +1,16 @@
 """Managers for emencia.django.countries"""
-from django.db import models
+from parler.managers import TranslatableManager
 
-class CountryManager(models.Manager):
+class CountryManager(TranslatableManager):
     """Manager for the countries"""
-    
+
     def leveled(self):
         """Return all countries with a level set"""
-        
-        # Compatibility support for Django<1.6
-        safe_get_queryset = (self.get_query_set if hasattr(self, 'get_query_set') else self.get_queryset)
-        
-        return safe_get_queryset.exclude(level=0)
-    
 
-                        
+        get_queryset = getattr(self, 'get_queryset', None)
+
+        # Compatibility support for Django<1.6
+        if get_queryset is None:
+            get_queryset = self.get_query_set
+
+        return get_queryset.exclude(level=0)

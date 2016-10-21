@@ -1,4 +1,5 @@
 .. _Django: https://www.djangoproject.com/
+.. _django-parler: https://pypi.python.org/pypi/django-parler
 
 ========================
 Emencia Django Countries
@@ -20,7 +21,8 @@ Requires
 ********
 
 * ``setuptools``;
-* `Django`_ >= 1.4 (should be compatible to *Django 1.8* and beyond);
+* `Django`_ >= 1.5 (should be compatible to *Django 1.8* and beyond);
+* `django-parler`_
 
 Install
 *******
@@ -36,6 +38,7 @@ Add it to your installed Django apps in settings:
     INSTALLED_APPS = (
         ...
         'emencia.django.countries',
+        'parler',
         ...
     )
     

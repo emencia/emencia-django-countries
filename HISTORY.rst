@@ -1,6 +1,13 @@
 Changelog
 =========
 
+Version (not released)
+--------------------------
+
+* Multilingual support with django-parler
+* Support for Django 1.4 removed
+
+
 Version 0.2.1 - 2015/12/10
 --------------------------
 
